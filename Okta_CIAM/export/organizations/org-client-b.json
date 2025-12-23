@@ -1,0 +1,24 @@
+{
+  "name": "org-client-b",
+  "display_name": "Client B",
+  "connections": [
+    {
+      "name": "Username-Password-Authentication",
+      "is_signup_enabled": false,
+      "assign_membership_on_login": false,
+      "show_as_button": true
+    },
+    {
+      "name": "email",
+      "assign_membership_on_login": false,
+      "show_as_button": true
+    },
+    {
+      "name": "google-oauth2",
+      "assign_membership_on_login": false,
+      "show_as_button": true
+    }
+  ],
+  "client_grants": [],
+  "discovery_domains": []
+}

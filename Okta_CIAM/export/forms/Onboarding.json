@@ -1,0 +1,280 @@
+{
+  "name": "Onboarding",
+  "languages": {
+    "primary": "en"
+  },
+  "nodes": [
+    {
+      "id": "flow_NLtw",
+      "type": "FLOW",
+      "coordinates": {
+        "x": 1835,
+        "y": 35
+      },
+      "config": {
+        "flow_id": "Update user_metadata",
+        "next_node": "$ending"
+      }
+    },
+    {
+      "id": "step_JCbi",
+      "type": "STEP",
+      "coordinates": {
+        "x": 144,
+        "y": -181
+      },
+      "alias": "Onboarding details",
+      "config": {
+        "components": [
+          {
+            "id": "rich_text_TkQM",
+            "category": "BLOCK",
+            "type": "RICH_TEXT",
+            "config": {
+              "content": "<h2>How are you planning to use Auth0?</h2><p>We'll streamline your setup experience accordingly,</p>"
+            }
+          },
+          {
+            "id": "account_type",
+            "category": "FIELD",
+            "type": "CHOICE",
+            "label": "Account type",
+            "hint": "<p>Are you creating this account on behalf of a company or other?</p>",
+            "required": false,
+            "sensitive": false,
+            "config": {
+              "multiple": false,
+              "options": [
+                {
+                  "label": "Company",
+                  "value": "Company"
+                },
+                {
+                  "label": "Other",
+                  "value": "Other"
+                }
+              ]
+            }
+          },
+          {
+            "id": "next_button_YxwF",
+            "category": "BLOCK",
+            "type": "NEXT_BUTTON",
+            "config": {
+              "text": "Continue"
+            }
+          }
+        ],
+        "next_node": "router_3mGw"
+      }
+    },
+    {
+      "id": "router_3mGw",
+      "type": "ROUTER",
+      "coordinates": {
+        "x": 731,
+        "y": -40
+      },
+      "alias": "Check account type",
+      "config": {
+        "rules": [
+          {
+            "id": "id_7203777948017",
+            "alias": "Account type = Other",
+            "condition": {
+              "operands": [
+                {
+                  "operands": [
+                    "{{fields.account_type}}",
+                    "Other"
+                  ],
+                  "operator": "EQ"
+                }
+              ],
+              "operator": "AND"
+            },
+            "next_node": "step_z5hJ"
+          },
+          {
+            "id": "id_5986762908872",
+            "alias": "Account type = Company",
+            "condition": {
+              "operands": [
+                {
+                  "operands": [
+                    "{{fields.account_type}}",
+                    "Company"
+                  ],
+                  "operator": "EQ"
+                }
+              ],
+              "operator": "AND"
+            },
+            "next_node": "step_Uf9p"
+          }
+        ],
+        "fallback": "$ending"
+      }
+    },
+    {
+      "id": "step_Uf9p",
+      "type": "STEP",
+      "coordinates": {
+        "x": 1163,
+        "y": 220
+      },
+      "alias": "Company details",
+      "config": {
+        "components": [
+          {
+            "id": "rich_text_Lww8",
+            "category": "BLOCK",
+            "type": "RICH_TEXT",
+            "config": {
+              "content": "<h2>Tell us a bit about your company</h2><p>We need you to complete your personal profile to personalize your onboarding experience.</p>"
+            }
+          },
+          {
+            "id": "company_name",
+            "category": "FIELD",
+            "type": "TEXT",
+            "label": "Company name",
+            "required": true,
+            "sensitive": false,
+            "config": {
+              "multiline": false
+            }
+          },
+          {
+            "id": "company_size",
+            "category": "FIELD",
+            "type": "DROPDOWN",
+            "label": "Company size",
+            "required": true,
+            "sensitive": false,
+            "config": {
+              "multiple": false,
+              "options": [
+                {
+                  "label": "1",
+                  "value": "1"
+                },
+                {
+                  "label": "2-5",
+                  "value": "2-5"
+                },
+                {
+                  "label": "6-10",
+                  "value": "6-10"
+                },
+                {
+                  "label": "11-50",
+                  "value": "11-50"
+                },
+                {
+                  "label": "51-100",
+                  "value": "51-100"
+                },
+                {
+                  "label": "101-250",
+                  "value": "101-250"
+                },
+                {
+                  "label": "251-500",
+                  "value": "251-500"
+                },
+                {
+                  "label": "501-1,000",
+                  "value": "501-1,000"
+                },
+                {
+                  "label": "1,001-10,000",
+                  "value": "1,001-10,000"
+                },
+                {
+                  "label": "10,001+",
+                  "value": "10,001+"
+                }
+              ]
+            }
+          },
+          {
+            "id": "next_button_Kfrc",
+            "category": "BLOCK",
+            "type": "NEXT_BUTTON",
+            "config": {
+              "text": "Continue"
+            }
+          }
+        ],
+        "next_node": "flow_NLtw"
+      }
+    },
+    {
+      "id": "step_z5hJ",
+      "type": "STEP",
+      "coordinates": {
+        "x": 1143,
+        "y": -395
+      },
+      "alias": "Profile details",
+      "config": {
+        "components": [
+          {
+            "id": "rich_text_xrdK",
+            "category": "BLOCK",
+            "type": "RICH_TEXT",
+            "config": {
+              "content": "<h2>Tell us a bit about you</h2><p>We need you to complete your personal profile to personalize your onboarding experience.</p>"
+            }
+          },
+          {
+            "id": "full_name",
+            "category": "FIELD",
+            "type": "TEXT",
+            "label": "Full name",
+            "required": true,
+            "sensitive": false,
+            "config": {
+              "multiline": false
+            }
+          },
+          {
+            "id": "job_title",
+            "category": "FIELD",
+            "type": "TEXT",
+            "label": "Job title",
+            "required": true,
+            "sensitive": false,
+            "config": {
+              "multiline": false
+            }
+          },
+          {
+            "id": "next_button_RdG5",
+            "category": "BLOCK",
+            "type": "NEXT_BUTTON",
+            "config": {
+              "text": "Continue"
+            }
+          }
+        ],
+        "next_node": "flow_NLtw"
+      }
+    }
+  ],
+  "start": {
+    "next_node": "step_JCbi",
+    "coordinates": {
+      "x": -131,
+      "y": -14
+    }
+  },
+  "ending": {
+    "resume_flow": true,
+    "coordinates": {
+      "x": 2338,
+      "y": 11
+    }
+  }
+}

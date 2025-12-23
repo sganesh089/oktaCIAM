@@ -1,0 +1,19 @@
+{
+  "name": "action_progressiveprofiling",
+  "code": "./actions/action_progressiveprofiling/code.js",
+  "runtime": "node22",
+  "status": "built",
+  "dependencies": [],
+  "secrets": [
+    {
+      "name": "formId"
+    }
+  ],
+  "supported_triggers": [
+    {
+      "id": "post-login",
+      "version": "v3"
+    }
+  ],
+  "deployed": true
+}

@@ -1,0 +1,10 @@
+{
+  "client_id": "IoT device app",
+  "audience": "IoTapi",
+  "scope": [
+    "write:watertemp"
+  ],
+  "organization_usage": "allow",
+  "allow_any_organization": true,
+  "subject_type": "client"
+}

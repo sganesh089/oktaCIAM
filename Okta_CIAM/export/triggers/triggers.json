@@ -1,0 +1,12 @@
+{
+  "post-login": [
+    {
+      "action_name": "action_addcustomclaim",
+      "display_name": "action_addcustomclaim"
+    },
+    {
+      "action_name": "action_progressiveprofiling",
+      "display_name": "action_progressiveprofiling"
+    }
+  ]
+}

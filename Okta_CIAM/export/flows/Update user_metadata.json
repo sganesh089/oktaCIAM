@@ -1,0 +1,25 @@
+{
+  "name": "Update user_metadata",
+  "actions": [
+    {
+      "id": "update_user_TXoV",
+      "type": "AUTH0",
+      "action": "UPDATE_USER",
+      "allow_failure": false,
+      "mask_output": false,
+      "params": {
+        "connection_id": "M2Mvault1",
+        "user_id": "{{context.user.user_id}}",
+        "changes": {
+          "user_metadata": {
+            "full_name": "{{fields.full_name}}",
+            "job_title": "{{fields.job_title}}",
+            "account_type": "{{fields.account_type}}",
+            "company_name": "{{fields.company_name}}",
+            "company_size": "{{fields.company_size}}"
+          }
+        }
+      }
+    }
+  ]
+}
