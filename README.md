@@ -1,9 +1,21 @@
 # Auth0 Mini Project: Authentication & Authorization Workflow
 
+<img width="891" height="589" alt="image" src="https://github.com/user-attachments/assets/976004da-9dbc-4b79-b4e9-ad060f93d5e7" />
+
+Architecture Diagram
+
+
 ## Overview
 During the holidays, I explored **Auth0** by building a complete authentication and authorization workflow using an active tenant.  
 The goal was to understand **user and role management, API integration, and workflow automation** in a practical setting.
 
+### Auth0 Applications Configuration
+
+The tenant includes multiple application types configured for hands-on testing:
+- Regular Web Applications for user authentication (OIDC)
+- Machine-to-Machine applications for API access
+- Used with Postman to validate OAuth2 flows and permissions
+  
 ## Project Scope
 - User authentication via Auth0 (login/logout)
 - Role-based access control
