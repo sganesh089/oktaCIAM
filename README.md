@@ -33,8 +33,7 @@ The solution is based on a CIAM architecture that includes:
 
 ## Auth0 Tenant Applications Setup Screenshot
 
-<img width="1399" height="910" alt="image" src="https://github.com/user-attachments/assets/567b58d1-0aab-4854-b053-039939c4660e" />
-
+<img width="1111" height="703" alt="image" src="https://github.com/user-attachments/assets/4a2c9ed7-fbf8-404c-91d5-bb791a824627" />
 
 ## Workflow Steps
 1. Created users, roles, and permissions in the Auth0 tenant  
