@@ -53,7 +53,107 @@ The solution is based on a CIAM architecture that includes:
 - Automating authentication behavior with **Rules and Actions**  
 - Secure API testing using Postman and M2M authentication  
 - Managing Auth0 tenant configuration as code using **`a0deploy`**  
-- Version-controlling identity configuration for repeatable and auditable deployments 
+- Version-controlling identity configuration for repeatable and auditable deployments
+
+## Configuration Backup & Version Control
+
+- Tenant configuration exported in YAML format
+
+- Stored in GitHub for:
+
+    - Change tracking
+
+    - Rollback capability
+
+    - Environment portability (dev/test/prod concepts)
+
+- No secrets or sensitive credentials are included in this repository
+
+## Tooling Used
+
+- Auth0 CIAM
+
+- Auth0 Deploy CLI (a0deploy)
+
+- Postman
+
+- GitHub
+
+- YAML configuration
+
+
+## Notes: OAuth 2.0 & OpenID Connect (Technical)
+
+### OAuth 2.0 (Authorization Framework)
+
+OAuth 2.0 is used for **authorization**. It defines how a client obtains access to protected resources.
+
+#### Key concepts used in this project
+
+##### Client Credentials Grant
+- Used by **Machine-to-Machine (M2M)** applications  
+- No user context involved  
+- Client authenticates using:
+  - `client_id`
+  - `client_secret`
+
+##### Access Token
+- Issued by Auth0  
+- Used to access protected APIs  
+- Sent in API requests as: Authorization: Bearer <access_token>
+
+
+##### Scopes
+- Define what actions a client is allowed to perform  
+- Enforced by API permissions  
+
+#### In this project
+- Postman acted as the OAuth client  
+- Auth0 issued access tokens  
+- Tokens were validated against API scopes and permissions  
+
+---
+
+### OpenID Connect (OIDC)
+
+OpenID Connect is an **identity layer built on top of OAuth 2.0** and is used for **authentication**.
+
+#### Key concepts
+
+##### ID Token
+- JWT containing authenticated user identity information  
+
+##### User Authentication
+- Username/password authentication  
+- Social identity providers  
+- Multi-Factor Authentication (MFA)  
+
+##### OIDC Flows
+- Typically uses **Authorization Code Flow**  
+- While no frontend application was built, OIDC settings were configured at the tenant and application level  
+
+#### In this project
+- OIDC configuration was applied to Auth0 applications  
+- Login experiences were customised using **Auth0 Forms**  
+- Identity lifecycle events (login, MFA enforcement, role assignment) were controlled using **Rules and Actions**
+
+---
+
+## Configuration Management & Backup
+
+- Tenant configuration was exported using **Auth0 Deploy CLI (`a0deploy`)**
+- Exported configuration includes:
+- Actions
+- Connections
+- Organizations
+- Forms
+- Flows
+- Tenant settings
+- Sensitive secrets are excluded
+- Configuration is stored in GitHub for:
+- Version control
+- Auditability
+- Future CI/CD integration
 
 ## Notes
 - No client secrets or sensitive credentials are stored in this repository
