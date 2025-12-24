@@ -59,3 +59,7 @@ The solution is based on a CIAM architecture that includes:
 - No client secrets or sensitive credentials are stored in this repository
 - The project is intended for learning, demonstration, and consulting reference purposes
 - While no production application was built, all authentication and authorization flows were fully tested using Postman.
+
+## **Disclaimer**
+
+This project is for educational and demonstration purposes only and does not represent a production deployment.
