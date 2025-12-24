@@ -21,7 +21,7 @@ The tenant includes multiple application types configured for hands-on testing:
 <img width="891" height="589" alt="image" src="https://github.com/user-attachments/assets/976004da-9dbc-4b79-b4e9-ad060f93d5e7" />
 
 
-## Auth0 Tenant Applications setup screenshotSteps
+## Auth0 Tenant Applications Setup Screenshot
 
 <img width="1399" height="910" alt="image" src="https://github.com/user-attachments/assets/567b58d1-0aab-4854-b053-039939c4660e" />
 
